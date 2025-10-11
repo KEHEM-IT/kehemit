@@ -1,0 +1,8 @@
+// styles/main.scss
+@use './variables' as *;
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: $primary-color;
+    color: white;
+}
