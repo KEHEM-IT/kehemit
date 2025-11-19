@@ -1,12 +1,26 @@
 // styles/main.scss
 @use './variables' as *;
+@use './navs' as *;
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: $primary-color;
-    color: white;
 }
 
-h2 {
-    font-size: 3rem;
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
 }

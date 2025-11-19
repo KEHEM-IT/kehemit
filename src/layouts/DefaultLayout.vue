@@ -1,12 +1,6 @@
 <template>
     <div>
-        <header class="p-4 bg-gray-800 text-white flex justify-between">
-            <h1 class="font-bold text-lg">My Vue App</h1>
-            <nav>
-                <RouterLink to="/" class="mr-4">Home</RouterLink>
-                <RouterLink to="/about">About</RouterLink>
-            </nav>
-        </header>
+        <Navs />
 
         <main class="p-6">
             <slot />
@@ -18,4 +12,6 @@
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Navs from './Navs.vue';
+</script>

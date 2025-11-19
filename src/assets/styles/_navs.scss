@@ -1,0 +1,47 @@
+// styles/navs.scss
+@use 'variables' as *;
+
+
+header.header {
+    position: sticky;
+    top: 0;
+    display: block;
+    background-color: $white;
+    padding: 1rem;
+    border-bottom: 1px solid $border;
+}
+
+
+nav.navs {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    // COLUMN 1
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: auto;
+        height: 3rem;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: $primary-color;
+        }
+    }
+
+    // COULMN 2
+    .nav-items {}
+}
