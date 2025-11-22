@@ -8,7 +8,7 @@
 
             <div class="nav-items">
                 <!-- Services Dropdown -->
-                <nav class="nav-item">
+                <div class="nav-item">
                     <RouterLink class="menu shimmer" to="/services">
                         SERVICES <i class="fa-regular fa-chevron-down"></i>
                     </RouterLink>
@@ -50,14 +50,14 @@
                             </RouterLink>
                         </li>
                     </ul>
-                </nav>
+                </div>
 
                 <RouterLink class="menu" to="/case-studies">CASE STUDIES</RouterLink>
                 <RouterLink class="menu" to="/portfolio">PORTFOLIO</RouterLink>
                 <RouterLink class="menu" to="/about">ABOUT US</RouterLink>
 
                 <!-- Language Dropdown -->
-                <nav class="nav-item language-selector">
+                <div class="nav-item language-selector">
                     <div class="menu">
                         <img :src="currentLanguage === 'en' ? usaFlag : banglaFlag"
                             :alt="currentLanguage === 'en' ? 'English' : 'Bangla'" class="flag-img">
@@ -78,7 +78,7 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </div>
 
                 <button class="cta-button">GET STARTED</button>
             </div>
@@ -91,7 +91,7 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" :class="{ 'active': mobileMenuOpen }">
             <!-- Services Mobile -->
-            <nav class="mobile-nav-item">
+            <div class="mobile-nav-item">
                 <button class="mobile-menu-header" @click="toggleServicesMenu">
                     SERVICES <i :class="servicesOpen ? 'fa-regular fa-chevron-up' : 'fa-regular fa-chevron-down'"></i>
                 </button>
@@ -133,14 +133,14 @@
                         </RouterLink>
                     </li>
                 </ul>
-            </nav>
+            </div>
 
             <RouterLink class="mobile-menu-item" to="/case-studies" @click="closeMobileMenu">CASE STUDIES</RouterLink>
             <RouterLink class="mobile-menu-item" to="/portfolio" @click="closeMobileMenu">PORTFOLIO</RouterLink>
             <RouterLink class="mobile-menu-item" to="/about" @click="closeMobileMenu">ABOUT US</RouterLink>
 
             <!-- Language Mobile -->
-            <nav class="mobile-nav-item">
+            <div class="mobile-nav-item">
                 <button class="mobile-menu-header" @click="toggleLanguageMenu">
                     <span>
                         <img :src="currentLanguage === 'en' ? usaFlag : banglaFlag"
@@ -163,7 +163,7 @@
                         </a>
                     </li>
                 </ul>
-            </nav>
+            </div>
 
             <button class="cta-button mobile" @click="closeMobileMenu">GET STARTED</button>
         </div>

@@ -1,6 +1,7 @@
 // styles/navs.scss
 @use 'variables' as *;
 @use 'animations' as *;
+@use 'sass:color';
 
 header.header {
     position: fixed;
@@ -243,7 +244,7 @@ nav.navs {
 
 // CTA Button
 .cta-button {
-    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 8%) 100%);
+    background: linear-gradient(135deg, $primary-color 0%, color.adjust($primary-color, $lightness: 8%) 100%);
     color: $white;
     border: none;
     padding: 0.75rem 1.75rem;
@@ -258,7 +259,7 @@ nav.navs {
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 25px rgba($primary-color, 0.4);
-        background: linear-gradient(135deg, darken($primary-color, 5%) 0%, darken($primary-color, 13%) 100%);
+        background: linear-gradient(135deg, color.adjust($primary-color, $lightness: 5%) 0%, color.adjust($primary-color, $lightness: 13%) 100%);
     }
 
     &:active {
@@ -270,15 +271,37 @@ nav.navs {
 .mobile-menu {
     display: none;
     flex-direction: column;
-    background-color: $white;
-    border-top: 1px solid rgba($border, 0.5);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     &.active {
-        max-height: 600px;
+        margin-top: 1rem;
+        max-height: calc(100vh - 5rem);
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: $white;
         padding: 1rem 0;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        // Custom scrollbar styling
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba($gray, 0.5);
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba($hightDark, 0.4);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: color.adjust($primary-color, $lightness: 10%);
+            }
+        }
     }
 
     .mobile-nav-item {
