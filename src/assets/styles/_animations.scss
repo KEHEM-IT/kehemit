@@ -470,6 +470,7 @@
     0% {
         filter: hue-rotate(0deg);
     }
+
     50% {
         filter: hue-rotate(-360deg);
     }
@@ -525,4 +526,71 @@
 // Apply spin animation
 @mixin animate-spin($duration: 1s, $delay: 0s) {
     animation: spin $duration linear $delay infinite;
+}
+
+
+
+// ------------------------------------------------------
+// ELIPSIS ANIMATION
+@keyframes ellipseAnimation {
+
+    0%,
+    100% {
+        top: 20%;
+        left: -5%;
+    }
+
+    50% {
+        top: 20%;
+        left: -12%;
+    }
+}
+
+@keyframes ellipseImgAnimation {
+  0%,
+  100% {
+    width: 150%;
+    filter: hue-rotate(0deg);
+    transition: filter 0.3s ease;
+  }
+
+  25% {
+    width: 165%;
+    filter: hue-rotate(10deg);
+    transition: filter 0.3s ease;
+  }
+
+  50% {
+    width: 180%;
+    filter: hue-rotate(0deg);
+    transition: filter 0.3s ease;
+  }
+
+  75% {
+    width: 165%;
+    filter: hue-rotate(20deg);
+    transition: filter 0.3s ease;
+  }
+}
+
+
+// SHAPE ANIMATION
+@keyframes shapeAnimation {
+    0% {
+        left: -10rem;
+    }
+
+    100% {
+        left: -3rem;
+    }
+}
+
+@keyframes shapeAnimation4 {
+    0% {
+        left: -13rem;
+    }
+
+    100% {
+        left: 0;
+    }
 }

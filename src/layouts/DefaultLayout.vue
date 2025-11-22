@@ -1,8 +1,9 @@
 <template>
     <div>
         <Navs />
+        <Hero />
 
-        <main class="p-6">
+        <main class="main">
             <slot />
         </main>
 
@@ -13,5 +14,6 @@
 </template>
 
 <script setup lang="ts">
+import Hero from './Hero.vue';
 import Navs from './Navs.vue';
 </script>

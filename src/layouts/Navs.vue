@@ -1,3 +1,4 @@
+<!-- src/layouts/Navs.vue -->
 <template>
     <header class="header" :class="{ 'hidden': isScrollingDown, 'visible': isScrollingUp }">
         <nav class="navs">

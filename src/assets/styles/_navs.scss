@@ -13,7 +13,7 @@ header.header {
     backdrop-filter: blur(10px);
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba($border, 0.5);
-    z-index: 1000;
+    z-index: $z-5;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
