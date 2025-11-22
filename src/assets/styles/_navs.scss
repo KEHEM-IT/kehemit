@@ -276,7 +276,7 @@ nav.navs {
 
     &.active {
         margin-top: 1rem;
-        max-height: calc(100vh - 5rem);
+        max-height: calc(100vh - 10rem);
         overflow-y: auto;
         overflow-x: hidden;
         background-color: $white;
@@ -462,10 +462,10 @@ nav.navs {
         width: 95%;
 
         .logo {
-            height: 2.25rem;
+            height: 2.6rem;
 
             p {
-                font-size: 1.25rem;
+                font-size: 2rem;
             }
         }
     }
@@ -474,10 +474,10 @@ nav.navs {
 @media (max-width: 480px) {
     nav.navs {
         .logo {
-            height: 2rem;
+            height: 2.5rem;
 
             p {
-                font-size: 1.1rem;
+                font-size: 1.5rem;
             }
         }
     }
