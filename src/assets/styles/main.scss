@@ -1,6 +1,10 @@
 // styles/main.scss
 @use './variables' as *;
 @use './navs' as *;
+@use './animations' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 *,
@@ -12,8 +16,18 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
+body,
+a,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+blockquote {
+    font-family: "Poppins", "Hind Siliguri", sans-serif;
 }
 
 
