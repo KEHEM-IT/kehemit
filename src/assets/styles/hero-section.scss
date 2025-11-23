@@ -7,15 +7,16 @@
 .hero-section-container {
     position: relative;
     display: block;
-    background-color: $gray;
+    background: $hero-gradient;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
+    z-index: $z-1;
 
     .hero-section {
         position: absolute;
         width: inherit;
-        height: 100dvh;
-        background: $hero-gradient;
+        height: inherit;
+        pointer-events: none;
         overflow: hidden;
         z-index: $z-1;
 
@@ -23,6 +24,7 @@
             position: absolute;
             top: -3rem;
             height: inherit;
+            pointer-events: none;
 
             // SHAPE-1
             &.shape-1 {
@@ -88,47 +90,123 @@
                     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
                 }
             }
+
+            // ELIPSIS
+            &.elipsis-2 {
+                z-index: $z-0;
+                top: -20%;
+                left: 60%;
+                animation: ellipseAnimation2 5s none infinite;
+                transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+                img {
+                    width: 10%;
+                    height: auto;
+                    animation: ellipseImgAnimation 10s none infinite;
+                    transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+                }
+            }
         }
     }
 
-    // RIGHT SIDE OF THE HERO SECTION
+    /* SWIPER inside CTA-SECTION */
     .cta-section {
         position: absolute;
-        left: 10%;
+        left: 0;
         top: 0;
         bottom: 0;
         right: 0;
         height: 100dvh;
-        width: 50%;
+        width: 100%;
         margin: 0 auto;
-        z-index: $z-1;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         text-align: center;
+        overflow: hidden;
+        z-index: $z-down;
 
+        .swiper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .swiper-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1%;
+        }
+
+        /* Your existing text styles */
         h1 {
+            width: 50%;
             position: relative;
             color: $white;
             font-size: 4rem;
             display: flex;
             align-items: center;
             text-transform: uppercase;
-            line-height: 1.5;
+            line-height: 1.2;
             letter-spacing: 2px;
+            animation: slideInLeft 1s ease;
+            z-index: $z-down;
         }
 
         h3 {
+            width: 50%;
             position: relative;
             color: $white;
             font-weight: 500;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
             display: flex;
             align-items: center;
             line-height: 1.2;
             letter-spacing: 1px;
+            margin-top: 10px;
+            animation: slideInRight 1s ease;
+        }
+
+        /* Swiper Buttons */
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: $white;
+            font-size: 1.3rem;
+            z-index: 50;
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        /* Pagination */
+        .swiper-pagination-bullet {
+            background: $white;
+            opacity: 0.6;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $white;
+            opacity: 1;
         }
     }
+
 }
