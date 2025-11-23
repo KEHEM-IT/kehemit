@@ -30,13 +30,16 @@
         </aside>
         <aside class="cta-section">
             <div class="swiper" ref="swiperContainer">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper hero-text-breakpoints">
                     <div class="swiper-slide">
                         <h1>Your Reliable Technology Partner</h1>
                         <h3>
                             We design and deliver software solutions and web solutions that turn your vision into
                             reality — with quality you can trust.
-                        </h3>
+                        </h3><br>
+                        <button type="button" class="btn-primary btn-lg btn-rounded z-max">
+                            Contact Us
+                        </button>
                     </div>
                     <div class="swiper-slide">
                         <h1>Innovation at Every Step</h1>
@@ -58,6 +61,12 @@
 
     </section>
 </template>
+
+
+
+
+
+
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';

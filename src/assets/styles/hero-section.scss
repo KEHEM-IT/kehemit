@@ -149,64 +149,96 @@
             justify-content: center;
             align-items: center;
             margin-left: 1%;
-        }
 
-        /* Your existing text styles */
-        h1 {
-            width: 50%;
-            position: relative;
-            color: $white;
-            font-size: 4rem;
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            animation: slideInLeft 1s ease;
-            z-index: $z-down;
-        }
+            h1 {
+                width: 50%;
+                position: relative;
+                color: $white;
+                font-size: 4rem;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                line-height: 1.2;
+                letter-spacing: 2px;
+                animation: slideInLeft 1s ease;
+                z-index: $z-down;
 
-        h3 {
-            width: 50%;
-            position: relative;
-            color: $white;
-            font-weight: 500;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            animation: slideInRight 1s ease;
-        }
+                @media screen and (max-width: 1280px) {
+                    font-size: 2rem;
+                }
+            }
 
-        /* Swiper Buttons */
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: $white;
-            font-size: 1.3rem;
-            z-index: 50;
-        }
+            h3 {
+                width: 50%;
+                position: relative;
+                color: $white;
+                font-weight: 500;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                line-height: 1.2;
+                letter-spacing: 1px;
+                margin-top: 10px;
+                animation: slideInRight 1s ease;
 
-        .swiper-button-prev {
-            left: 10px;
-        }
+                @media screen and (max-width: 1668px) {
+                    width: 40%;
+                    font-size: 1rem;
+                }
+            }
 
-        .swiper-button-next {
-            right: 10px;
-        }
-
-        /* Pagination */
-        .swiper-pagination-bullet {
-            background: $white;
-            opacity: 0.6;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: $white;
-            opacity: 1;
+            @media screen and (max-width: 1280px) {
+                width: 40%;
+                margin-left: 3%;
+            }
         }
     }
 
+}
+
+.pt-4 {
+    padding-top: 1rem;
+}
+
+.pl-4 {
+    padding-left: 1rem;
+}
+
+.pr-4 {
+    padding-right: 1rem;
+}
+
+.pb-4 {
+    padding-bottom: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.ml-4 {
+    margin-left: 1rem;
+}
+
+.mr-4 {
+    margin-right: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+
+
+@media screen and (max-width: 1268px) {
+    .swiper-slide {
+        h1 {
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+    }
 }
