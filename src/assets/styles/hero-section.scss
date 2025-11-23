@@ -29,8 +29,8 @@
             // SHAPE-1
             &.shape-1 {
                 z-index: $z-5;
-                left: -3rem;
-                animation: shapeAnimation 0.3s none;
+                left: -3.5rem;
+                animation: shapeAnimation 0.8s forwards;
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
                 img {
@@ -42,7 +42,7 @@
             &.shape-2 {
                 z-index: $z-4;
                 left: -3rem;
-                animation: shapeAnimation 0.5s none;
+                animation: shapeAnimation 1.2s none;
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
                 img {
@@ -55,7 +55,7 @@
                 z-index: $z-3;
                 left: -3rem;
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
-                animation: shapeAnimation 0.8s none;
+                animation: shapeAnimation 1.8s none;
 
                 img {
                     height: calc(100vh + 10rem);
@@ -67,7 +67,7 @@
                 z-index: $z-2;
                 left: 0;
                 top: -6rem;
-                animation: shapeAnimation4 1s none;
+                animation: shapeAnimation4 2.2s none;
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
                 img {

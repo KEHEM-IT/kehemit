@@ -63,10 +63,7 @@
 import { ref, onMounted } from 'vue';
 import Swiper from 'swiper';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 const swiperContainer = ref<HTMLDivElement | null>(null);
 
@@ -75,7 +72,7 @@ onMounted(() => {
         new Swiper(swiperContainer.value, {
             modules: [Pagination, Navigation, Autoplay],
             loop: true,
-            speed: 800,
+            speed: 1000,
 
             autoplay: {
                 delay: 3500,
