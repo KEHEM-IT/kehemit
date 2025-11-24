@@ -32,29 +32,44 @@
             <div class="swiper" ref="swiperContainer">
                 <div class="swiper-wrapper hero-text-breakpoints">
                     <div class="swiper-slide">
-                        <h1>Your Reliable Technology Partner</h1>
+                        <h1>Let’s&nbsp;<h1 class="innerHighlights">Talk</h1> &nbsp;Ideas</h1>
                         <h3>
-                            We design and deliver software solutions and web solutions that turn your vision into
-                            reality — with quality you can trust.
+                            Connect with our team and start turning your vision into a powerful digital solution.
                         </h3><br>
-                        <button type="button" class="btn-primary btn-lg btn-rounded z-max">
-                            Contact Us
-                        </button>
+                        <RouterLink to="/">
+                            <button type="button" class="btn-primary btn-lg btn-rounded">
+                                Contact Us
+                            </button>
+                        </RouterLink>
                     </div>
+
                     <div class="swiper-slide">
-                        <h1>Innovation at Every Step</h1>
+                        <h1>
+                            <h1 class="innerHighlights">Explore</h1> &nbsp;Our Work
+                        </h1>
                         <h3>
-                            From concept to deployment, we build cutting-edge solutions tailored to your business
-                            needs.
-                        </h3>
+                            Discover the innovative services and solutions we build to accelerate your business.
+                        </h3><br>
+                        <RouterLink to="/">
+                            <button type="button" class="btn-primary btn-lg btn-rounded">
+                                Explore !
+                            </button>
+                        </RouterLink>
                     </div>
+
                     <div class="swiper-slide">
-                        <h1>Quality That Exceeds Expectations</h1>
+                        <h1>Get&nbsp;<h1 class="innerHighlights">Expert</h1> &nbsp;Help</h1>
                         <h3>
-                            Our commitment to excellence ensures your project is delivered on time and beyond
-                            standards.
-                        </h3>
+                            Receive professional guidance to choose the right technology and strategy for your project.
+                        </h3><br>
+                        <RouterLink to="/">
+                            <button type="button" class="btn-primary btn-lg btn-rounded">
+                                Get Consultation
+                            </button>
+                        </RouterLink>
                     </div>
+
+
                 </div>
             </div>
         </aside>
@@ -84,7 +99,7 @@ onMounted(() => {
             speed: 1000,
 
             autoplay: {
-                delay: 3500,
+                delay: 5000,
                 disableOnInteraction: false,
             },
 

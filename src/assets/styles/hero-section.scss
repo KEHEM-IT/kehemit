@@ -75,7 +75,6 @@
                 }
             }
 
-
             // ELIPSIS
             &.elipsis {
                 z-index: $z-0;
@@ -84,30 +83,49 @@
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
                 img {
-                    width: 150%;
                     height: auto;
                     animation: ellipseImgAnimation 5s none infinite;
                     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+                    @media screen and (max-width: 1368px) {
+                        animation: ellipseAnimationMedia 5s none infinite;
+                    }
                 }
             }
 
             // ELIPSIS
             &.elipsis-2 {
                 z-index: $z-0;
-                top: -20%;
-                left: 60%;
                 animation: ellipseAnimation2 5s none infinite;
                 transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
                 img {
-                    width: 10%;
                     height: auto;
                     animation: ellipseImgAnimation 10s none infinite;
                     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
                 }
             }
+
+            @media screen and (max-width: 720px) {
+
+                &.shape-1,
+                &.shape-2,
+                &.shape-3,
+                &.shape-4 {
+                    display: none;
+                }
+
+                &.elipsis {
+                    opacity: 0.5;
+                }
+
+                &.elipsis2 {
+                    opacity: 0.5;
+                }
+            }
         }
     }
+
 
     /* SWIPER inside CTA-SECTION */
     .cta-section {
@@ -149,9 +167,10 @@
             justify-content: center;
             align-items: center;
             margin-left: 1%;
+            margin-top: 5rem;
+            width: 50%;
 
             h1 {
-                width: 50%;
                 position: relative;
                 color: $white;
                 font-size: 4rem;
@@ -163,8 +182,12 @@
                 animation: slideInLeft 1s ease;
                 z-index: $z-down;
 
-                @media screen and (max-width: 1280px) {
-                    font-size: 2rem;
+                .innerHighlights {
+                    color: #ffeaae;
+                }
+
+                @media screen and (max-width: 1368px) {
+                    font-size: 3.5rem;
                 }
             }
 
@@ -182,8 +205,13 @@
                 margin-top: 10px;
                 animation: slideInRight 1s ease;
 
-                @media screen and (max-width: 1668px) {
+                @media screen and (max-width: 1368px) {
                     width: 40%;
+                    font-size: 1rem;
+                }
+
+                @media screen and (max-width: 720px) {
+                    width: 100%;
                     font-size: 1rem;
                 }
             }
@@ -192,9 +220,13 @@
                 width: 40%;
                 margin-left: 3%;
             }
+
+            @media screen and (max-width: 720px) {
+                width: 90%;
+                margin: 0 auto;
+            }
         }
     }
-
 }
 
 .pt-4 {

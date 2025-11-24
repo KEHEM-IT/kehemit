@@ -536,15 +536,30 @@
 
     0%,
     100% {
-        top: 30%;
+        top: -10%;
+        left: -15%;
+    }
+
+    50% {
+        top: 5%;
+        left: -50%;
+    }
+}
+
+@keyframes ellipseAnimationMobile {
+
+    0%,
+    100% {
+        bottom: 10%;
         left: -5%;
     }
 
     50% {
-        top: 10%;
-        left: -20%;
+        bottom: -5%;
+        left: 100%;
     }
 }
+
 @keyframes ellipseAnimation2 {
 
     0%,
@@ -575,13 +590,69 @@
     }
 
     50% {
-        width: 200%;
+        width: 150%;
         filter: hue-rotate(-50deg) blur(5px);
         transition: filter 0.3s ease;
     }
 
     75% {
-        width: 165%;
+        width: 130%;
+        filter: hue-rotate(-10deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+}
+
+@keyframes ellipseAnimationMedia {
+
+    0%,
+    100% {
+        width: 100%;
+        filter: hue-rotate(0deg) blur(5px) contrast(1.2);
+        transition: filter 0.3s ease;
+    }
+
+    25% {
+        width: 120%;
+        filter: hue-rotate(10deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    50% {
+        width: 150%;
+        filter: hue-rotate(-50deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    75% {
+        width: 175%;
+        filter: hue-rotate(-10deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+}
+
+@keyframes ellipseAnimationMediaMobile {
+
+    0%,
+    100% {
+        width: 150%;
+        filter: hue-rotate(0deg) blur(5px) contrast(1.2);
+        transition: filter 0.3s ease;
+    }
+
+    25% {
+        width: 150%;
+        filter: hue-rotate(10deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    50% {
+        width: 180%;
+        filter: hue-rotate(-50deg) blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    75% {
+        width: 135%;
         filter: hue-rotate(-10deg) blur(5px);
         transition: filter 0.3s ease;
     }

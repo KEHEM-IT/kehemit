@@ -259,6 +259,7 @@
 
     &::after {
         background: $primary-gradient-hover;
+        z-index: $z-down;
     }
 
     &:hover {
