@@ -13,7 +13,7 @@
                 transform: `translate(-50%, -50%) scale(${segment.scale})`
             }"
         />
-        
+
         <!-- Main cursor ring -->
         <div class="cursor-ring" :class="{ 'cursor-hover': isPointer }" :style="{
             left: `${cursorX}px`,
@@ -25,6 +25,7 @@
             left: `${cursorDotX}px`,
             top: `${cursorDotY}px`
         }" />
+        
     </div>
 </template>
 
@@ -79,3 +80,4 @@ const { cursorX, cursorY, cursorDotX, cursorDotY, isPointer, isHidden, tailSegme
     box-shadow: 0 0 10px rgba(147, 197, 253, 0.5);
 }
 </style>
+
