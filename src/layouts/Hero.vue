@@ -32,7 +32,7 @@
             <div class="swiper" ref="swiperContainer">
                 <div class="swiper-wrapper hero-text-breakpoints">
                     <div class="swiper-slide">
-                        <h1>Let’s&nbsp;<h1 class="innerHighlights">Talk</h1> &nbsp;Ideas</h1>
+                        <h1>Let’s&nbsp;<span class="innerHighlights">Talk</span> &nbsp;Ideas</h1>
                         <h3>
                             Connect with our team and start turning your vision into a powerful digital solution.
                         </h3><br>
@@ -45,7 +45,7 @@
 
                     <div class="swiper-slide">
                         <h1>
-                            <h1 class="innerHighlights">Explore</h1> &nbsp;Our Work
+                            <span class="innerHighlights">Explore</span> &nbsp;Our Work
                         </h1>
                         <h3>
                             Discover the innovative services and solutions we build to accelerate your business.
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <h1>Get&nbsp;<h1 class="innerHighlights">Expert</h1> &nbsp;Help</h1>
+                        <h1>Get&nbsp;<span class="innerHighlights">Expert</span> &nbsp;Help</h1>
                         <h3>
                             Receive professional guidance to choose the right technology and strategy for your project.
                         </h3><br>
