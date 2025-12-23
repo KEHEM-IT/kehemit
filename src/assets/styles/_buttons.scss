@@ -418,7 +418,7 @@
 .btn-dark {
     @extend %button-base;
     @extend %shimmer-effect;
-    background: linear-gradient(135deg, $black 0%, $hightDark 100%);
+    background: linear-gradient(135deg, $black 0%, $highDark 100%);
     color: $white;
     box-shadow: 0 4px 15px rgba($black, 0.3);
 
@@ -429,7 +429,7 @@
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 3px rgba($hightDark, 0.4);
+        box-shadow: 0 0 0 3px rgba($highDark, 0.4);
     }
 
     &:active {

@@ -227,6 +227,73 @@
             }
         }
     }
+
+    // EXPERIENCE DETAILS
+    .exd {
+        opacity: 0;
+        transition: opacity 0.8s ease, transform 0.8s ease, bottom 0.5s ease;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        bottom: -10rem;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 15rem;
+        z-index: $z-1;
+        border-radius: 0.5rem;
+        background: $white;
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.15),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+        @media screen and (max-width: 1500px) {
+            height: 12rem;
+            bottom: -6rem;
+        }
+
+        &.exd-visible {
+            opacity: 1;
+            bottom: -7rem;
+        }
+
+        .exd-button {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 30%;
+            text-align: center;
+
+            .outline-text {
+                font-size: 5rem;
+                font-weight: 800;
+                color: transparent;
+                -webkit-text-stroke: 1.5px #0196A7;
+                line-height: 0.9;
+            }
+
+            .exd-title {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: rgba($black, 0.7);
+                padding-top: 2px;
+                padding-bottom: 2px;
+            }
+
+            .exd-details {
+                font-size: 0.9rem;
+                color: $highDark;
+                font-style: italic;
+            }
+        }
+
+
+
+
+
+    }
 }
 
 .pt-4 {
