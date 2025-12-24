@@ -16,6 +16,7 @@ export const useCursor = () => {
     const isPointer = ref(false)
     const isHidden = ref(false)
     const tailSegments = ref<TailSegment[]>([])
+    const isTouchDevice = ref(false)
 
     let rafId: number | null = null
     const TAIL_LENGTH = 6
@@ -60,6 +61,32 @@ export const useCursor = () => {
     const updateCursor = (e: MouseEvent) => {
         cursorX.value = e.clientX
         cursorY.value = e.clientY
+        isHidden.value = false
+    }
+
+    // Touch event handlers
+    const updateCursorTouch = (e: TouchEvent) => {
+        if (e.touches.length > 0) {
+            const touch = e.touches[0]
+            cursorX.value = touch.clientX
+            cursorY.value = touch.clientY
+            isHidden.value = false
+        }
+    }
+
+    const handleTouchStart = (e: TouchEvent) => {
+        isTouchDevice.value = true
+        updateCursorTouch(e)
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+        e.preventDefault() // Prevent scrolling while dragging
+        updateCursorTouch(e)
+    }
+
+    const handleTouchEnd = () => {
+        // Optionally hide cursor after touch ends
+        // isHidden.value = true
     }
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -69,7 +96,9 @@ export const useCursor = () => {
     }
 
     const handleMouseLeave = () => {
-        isHidden.value = true
+        if (!isTouchDevice.value) {
+            isHidden.value = true
+        }
     }
 
     const handleMouseEnter = () => {
@@ -80,12 +109,21 @@ export const useCursor = () => {
         cursorDotX.value = window.innerWidth / 2
         cursorDotY.value = window.innerHeight / 2
 
+        // Detect if it's a touch device
+        isTouchDevice.value = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+
         initTail()
 
+        // Mouse events
         document.addEventListener('mousemove', updateCursor)
         document.addEventListener('mouseover', handleMouseOver)
         document.addEventListener('mouseleave', handleMouseLeave)
         document.addEventListener('mouseenter', handleMouseEnter)
+
+        // Touch events
+        document.addEventListener('touchstart', handleTouchStart, { passive: false })
+        document.addEventListener('touchmove', handleTouchMove, { passive: false })
+        document.addEventListener('touchend', handleTouchEnd)
 
         // Hide default cursor
         document.body.style.cursor = 'none'
@@ -95,10 +133,16 @@ export const useCursor = () => {
     })
 
     onUnmounted(() => {
+        // Remove mouse event listeners
         document.removeEventListener('mousemove', updateCursor)
         document.removeEventListener('mouseover', handleMouseOver)
         document.removeEventListener('mouseleave', handleMouseLeave)
         document.removeEventListener('mouseenter', handleMouseEnter)
+
+        // Remove touch event listeners
+        document.removeEventListener('touchstart', handleTouchStart)
+        document.removeEventListener('touchmove', handleTouchMove)
+        document.removeEventListener('touchend', handleTouchEnd)
 
         if (rafId) cancelAnimationFrame(rafId)
 
@@ -113,6 +157,7 @@ export const useCursor = () => {
         cursorDotY,
         isPointer,
         isHidden,
-        tailSegments
+        tailSegments,
+        isTouchDevice
     }
 }
