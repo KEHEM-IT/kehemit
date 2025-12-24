@@ -1,0 +1,195 @@
+// styles/footer.scss
+@use 'variables' as *;
+@use 'variables' as *;
+@use 'sass:color';
+
+footer.footer {
+    position: relative;
+    width: 100%;
+    background-color: $footer;
+    color: $white;
+
+    /* ============================= */
+    /* MAIN FOOTER CONTAINER */
+    /* ============================= */
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 90%;
+        margin: 0 auto;
+        padding: 3rem 0;
+    }
+
+    /* ============================= */
+    /* FOOTER COLUMN BASE */
+    /* ============================= */
+    .footer-col {
+        flex: 1 1 180px;
+        min-width: 180px;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            color: $white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 0.6rem;
+
+                a {
+                    color: color.scale($white, $lightness: -20%);
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    transition: color 0.25s ease;
+
+                    &:hover {
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ============================= */
+    /* ABOUT / BRAND SECTION */
+    /* ============================= */
+    .footer-about {
+        flex: 1 1 280px;
+        max-width: 320px;
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+
+            img {
+                height: 38px;
+                width: auto;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+            }
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: color.scale($white, $lightness: -18%);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0.6rem;
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background-color: color.scale($footer, $lightness: -5%);
+                color: $white;
+                font-size: 0.9rem;
+                transition: all 0.25s ease;
+
+                &:hover {
+                    background-color: $accent-color;
+                    color: $white;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    /* ============================= */
+    /* CONTACT INFORMATION */
+    /* ============================= */
+    .footer-contact {
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: color.scale($white, $lightness: -15%);
+
+            i {
+                margin-top: 0.2rem;
+                color: $accent-color;
+                min-width: 16px;
+            }
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+
+    /* ============================= */
+    /* DMCA BADGE */
+    /* ============================= */
+    .footer-dmca {
+        margin-top: 1rem;
+
+        img {
+            max-width: 120px;
+            height: auto;
+        }
+    }
+
+    /* ============================= */
+    /* FOOTER BOTTOM BAR */
+    /* ============================= */
+    .footer-bottom {
+        background-color: $copyrights;
+        padding: 1rem 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        width: 100%;
+
+        >div {
+            font-size: 0.85rem;
+            color: color.scale($white, $lightness: -20%);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.2rem;
+
+            a {
+                font-size: 0.85rem;
+                color: color.scale($white, $lightness: -20%);
+                text-decoration: none;
+                transition: color 0.25s ease;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}

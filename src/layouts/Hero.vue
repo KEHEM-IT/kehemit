@@ -103,7 +103,7 @@
                 </div>
             </section>
         </section>
-        <br><br><br>
+        <div class="hero-height"></div>
     </div>
 </template>
 
