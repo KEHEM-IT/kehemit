@@ -2,7 +2,6 @@
 <template>
   <DefaultLayout>
     <section>
-      <h2 class="text-2xl font-bold mb-4">Home Page</h2>
     </section>
   </DefaultLayout>
 </template>

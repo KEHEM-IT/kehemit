@@ -176,6 +176,7 @@
                 font-size: 4rem;
                 display: flex;
                 align-items: center;
+                flex-direction: column;
                 text-transform: uppercase;
                 line-height: 1.2;
                 letter-spacing: 2px;
@@ -183,7 +184,12 @@
                 z-index: $z-down;
 
                 .innerHighlights {
+                    display: flex;
                     color: #ffeaae;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    letter-spacing: 2px;
+                    animation: slideInLeft 1s ease;
                 }
 
                 @media screen and (max-width: 1368px) {
@@ -238,10 +244,10 @@
         justify-content: center;
         position: absolute;
         left: 50%;
-        bottom: -10rem;
+        bottom: -10%;
         transform: translateX(-50%);
         width: 80%;
-        height: 15rem;
+        height: auto;
         z-index: $z-1;
         border-radius: 0.5rem;
         background: $white;
@@ -249,22 +255,25 @@
             0 4px 30px rgba(0, 0, 0, 0.15),
             inset 0 1px 1px rgba(255, 255, 255, 0.3);
 
-        @media screen and (max-width: 1500px) {
-            height: 12rem;
-            bottom: -6rem;
+        @media screen and (max-width: 1368px) {
+            flex-direction: column;
+            top: 140vh;
+            width: 100%;
+            
         }
+
 
         &.exd-visible {
             opacity: 1;
-            bottom: -7rem;
+            bottom: -5%;
         }
 
         .exd-button {
             display: flex;
             flex-direction: column;
-            padding: 1rem;
-            width: 30%;
+            width: auto;
             text-align: center;
+            padding: 1rem;
 
             .outline-text {
                 font-size: 5rem;
@@ -272,6 +281,7 @@
                 color: transparent;
                 -webkit-text-stroke: 1.5px #0196A7;
                 line-height: 0.9;
+                transition: all 0.3s ease;
             }
 
             .exd-title {
@@ -280,12 +290,34 @@
                 color: rgba($black, 0.7);
                 padding-top: 2px;
                 padding-bottom: 2px;
+                transition: all 0.3s ease;
             }
 
             .exd-details {
                 font-size: 0.9rem;
                 color: $highDark;
                 font-style: italic;
+                transition: all 0.3s ease;
+                padding: 1rem;
+
+                @media screen and (min-width: 1620px) {
+                    padding: 1rem;
+                }
+            }
+
+            &:hover .outline-text {
+                color: #0196A7;
+                transition: all 0.3s ease;
+            }
+
+            &:hover .exd-title {
+                color: $black;
+                transition: all 0.3s ease;
+            }
+
+            &:hover .exd-details {
+                color: rgba($black, 0.9);
+                transition: all 0.3s ease;
             }
         }
 
