@@ -1,6 +1,6 @@
 <!-- components/CustomCursor.vue -->
 <template>
-    <div class="custom-cursor-wrapper" v-if="!isHidden">
+    <div class="custom-cursor-wrapper" v-if="!isHidden && !isTouchDevice">
         <!-- Tail segments -->
         <div 
             v-for="(segment, index) in tailSegments" 
@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import { useCursor } from '../composables/useCursor'
 
-const { cursorX, cursorY, cursorDotX, cursorDotY, isPointer, isHidden, tailSegments } = useCursor()
+const { cursorX, cursorY, cursorDotX, cursorDotY, isPointer, isHidden, tailSegments, isTouchDevice } = useCursor()
 </script>
 
 <style scoped lang="scss">
@@ -80,4 +80,3 @@ const { cursorX, cursorY, cursorDotX, cursorDotY, isPointer, isHidden, tailSegme
     box-shadow: 0 0 10px rgba(147, 197, 253, 0.5);
 }
 </style>
-

@@ -64,31 +64,6 @@ export const useCursor = () => {
         isHidden.value = false
     }
 
-    // Touch event handlers
-    const updateCursorTouch = (e: TouchEvent) => {
-        if (e.touches.length > 0) {
-            const touch = e.touches[0]
-            cursorX.value = touch.clientX
-            cursorY.value = touch.clientY
-            isHidden.value = false
-        }
-    }
-
-    const handleTouchStart = (e: TouchEvent) => {
-        isTouchDevice.value = true
-        updateCursorTouch(e)
-    }
-
-    const handleTouchMove = (e: TouchEvent) => {
-        e.preventDefault() // Prevent scrolling while dragging
-        updateCursorTouch(e)
-    }
-
-    const handleTouchEnd = () => {
-        // Optionally hide cursor after touch ends
-        // isHidden.value = true
-    }
-
     const handleMouseOver = (e: MouseEvent) => {
         const target = e.target as HTMLElement
         const clickable = target.closest('a, button, input, textarea, select, [role="button"]')
@@ -96,36 +71,44 @@ export const useCursor = () => {
     }
 
     const handleMouseLeave = () => {
-        if (!isTouchDevice.value) {
-            isHidden.value = true
-        }
+        isHidden.value = true
     }
 
     const handleMouseEnter = () => {
         isHidden.value = false
     }
 
+    // Detect if device has touch capability
+    const checkTouchDevice = () => {
+        return (
+            'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
+            window.matchMedia('(pointer: coarse)').matches
+        )
+    }
+
     onMounted(() => {
+        // Check if it's a touch device
+        isTouchDevice.value = checkTouchDevice()
+
+        // Don't initialize custom cursor on touch devices
+        if (isTouchDevice.value) {
+            isHidden.value = true
+            return
+        }
+
         cursorDotX.value = window.innerWidth / 2
         cursorDotY.value = window.innerHeight / 2
 
-        // Detect if it's a touch device
-        isTouchDevice.value = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-
         initTail()
 
-        // Mouse events
+        // Mouse events only
         document.addEventListener('mousemove', updateCursor)
         document.addEventListener('mouseover', handleMouseOver)
         document.addEventListener('mouseleave', handleMouseLeave)
         document.addEventListener('mouseenter', handleMouseEnter)
 
-        // Touch events
-        document.addEventListener('touchstart', handleTouchStart, { passive: false })
-        document.addEventListener('touchmove', handleTouchMove, { passive: false })
-        document.addEventListener('touchend', handleTouchEnd)
-
-        // Hide default cursor
+        // Hide default cursor only on non-touch devices
         document.body.style.cursor = 'none'
 
         // Start animation loop
@@ -133,21 +116,18 @@ export const useCursor = () => {
     })
 
     onUnmounted(() => {
-        // Remove mouse event listeners
-        document.removeEventListener('mousemove', updateCursor)
-        document.removeEventListener('mouseover', handleMouseOver)
-        document.removeEventListener('mouseleave', handleMouseLeave)
-        document.removeEventListener('mouseenter', handleMouseEnter)
+        // Only remove listeners if they were added
+        if (!isTouchDevice.value) {
+            document.removeEventListener('mousemove', updateCursor)
+            document.removeEventListener('mouseover', handleMouseOver)
+            document.removeEventListener('mouseleave', handleMouseLeave)
+            document.removeEventListener('mouseenter', handleMouseEnter)
 
-        // Remove touch event listeners
-        document.removeEventListener('touchstart', handleTouchStart)
-        document.removeEventListener('touchmove', handleTouchMove)
-        document.removeEventListener('touchend', handleTouchEnd)
+            if (rafId) cancelAnimationFrame(rafId)
 
-        if (rafId) cancelAnimationFrame(rafId)
-
-        // Restore default cursor
-        document.body.style.cursor = ''
+            // Restore default cursor
+            document.body.style.cursor = ''
+        }
     })
 
     return {

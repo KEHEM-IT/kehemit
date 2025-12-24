@@ -255,11 +255,17 @@
             0 4px 30px rgba(0, 0, 0, 0.15),
             inset 0 1px 1px rgba(255, 255, 255, 0.3);
 
-        @media screen and (max-width: 1368px) {
+        @media screen and (max-width: 720px) {
             flex-direction: column;
-            top: 140vh;
+            top: 150vh;
             width: 100%;
-            
+
+            .exd-button:hover {
+                background-color: rgba($gray, 0.4);
+                border-top: 1px solid rgba($gray, 0.8);
+                border-bottom: 1px solid rgba($gray, 0.8);
+            }
+
         }
 
 
