@@ -276,7 +276,12 @@
 
         &.exd-visible {
             opacity: 1;
-            bottom: -5%;
+            bottom: -10%;
+
+            @media screen and (max-width: 1368px) {
+                bottom: -22%;
+            }
+
         }
 
         .exd-button {
@@ -341,9 +346,10 @@
 
 .hero-height {
     display: block;
+    height: 10rem;
 
     @media screen and (max-width: 720px) {
-       height: 90vh;
+        height: 90vh;
     }
 }
 
