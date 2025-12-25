@@ -3,6 +3,7 @@
 @use 'animations' as *;
 @use 'sass:color';
 @use "mixins" as *;
+@use "breakpoints" as *;
 
 
 .hero-section-container {
@@ -88,7 +89,7 @@
                     animation: ellipseImgAnimation 5s none infinite;
                     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
-                    @media screen and (max-width: 1368px) {
+                    @include breakpoint(desktop) {
                         animation: ellipseAnimationMedia 5s none infinite;
                     }
                 }
@@ -107,7 +108,7 @@
                 }
             }
 
-            @media screen and (max-width: 720px) {
+            @include breakpoint(laptop) {
 
                 &.shape-1,
                 &.shape-2,
@@ -193,7 +194,7 @@
                     animation: slideInLeft 1s ease;
                 }
 
-                @media screen and (max-width: 1368px) {
+                @include breakpoint(desktop) {
                     font-size: 3.5rem;
                 }
             }
@@ -212,23 +213,23 @@
                 margin-top: 10px;
                 animation: slideInRight 1s ease;
 
-                @media screen and (max-width: 1368px) {
+                @include breakpoint(laptop) {
                     width: 40%;
                     font-size: 1rem;
                 }
 
-                @media screen and (max-width: 720px) {
+                @include breakpoint(tablet) {
                     width: 100%;
                     font-size: 1rem;
                 }
             }
 
-            @media screen and (max-width: 1280px) {
+            @include breakpoint(desktop) {
                 width: 40%;
                 margin-left: 3%;
             }
 
-            @media screen and (max-width: 720px) {
+            @include breakpoint(tablet) {
                 width: 90%;
                 margin: 0 auto;
             }
@@ -256,7 +257,7 @@
             0 4px 30px rgba(0, 0, 0, 0.15),
             inset 0 1px 1px rgba(255, 255, 255, 0.3);
 
-        @media screen and (max-width: 720px) {
+        @include breakpoint(mobile) {
             flex-direction: column;
             top: 90vh;
             width: 100%;
@@ -279,7 +280,7 @@
             opacity: 1;
             bottom: -10%;
 
-            @media screen and (max-width: 1368px) {
+            @include breakpoint(desktop) {
                 bottom: -22%;
             }
 
@@ -312,7 +313,7 @@
                 transition: all 0.3s ease;
                 padding: 1rem;
 
-                @media screen and (min-width: 1620px) {
+                @include breakpoint(wide-screen) {
                     padding: 1rem;
                 }
             }
@@ -344,7 +345,7 @@
     display: block;
     height: 10rem;
 
-    @media screen and (max-width: 720px) {
+    @include breakpoint(mobile) {
         height: 90vh;
     }
 }
@@ -383,7 +384,7 @@
 
 
 
-@media screen and (max-width: 1268px) {
+@include breakpoint(desktop) {
     .swiper-slide {
         h1 {
             font-size: 1rem;

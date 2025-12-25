@@ -2,9 +2,11 @@
 @use 'variables' as *;
 @use 'animations' as *;
 @use 'sass:color';
+@use "sass:math";
+@use "sass:map";
 
 
-
+// OUTLINE
 @mixin outline-text($stroke: #0196A7, $size: 5rem) {
     font-size: $size;
     font-weight: 800;
@@ -13,3 +15,4 @@
     line-height: 0.9;
     transition: all 0.3s ease;
 }
+
