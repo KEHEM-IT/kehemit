@@ -1,0 +1,15 @@
+// styles/navs.scss
+@use 'variables' as *;
+@use 'animations' as *;
+@use 'sass:color';
+
+
+
+@mixin outline-text($stroke: #0196A7, $size: 5rem) {
+    font-size: $size;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1.5px $stroke;
+    line-height: 0.9;
+    transition: all 0.3s ease;
+}

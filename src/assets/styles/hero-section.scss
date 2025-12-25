@@ -2,6 +2,7 @@
 @use 'variables' as *;
 @use 'animations' as *;
 @use 'sass:color';
+@use "mixins" as *;
 
 
 .hero-section-container {
@@ -292,12 +293,7 @@
             padding: 1rem;
 
             .outline-text {
-                font-size: 5rem;
-                font-weight: 800;
-                color: transparent;
-                -webkit-text-stroke: 1.5px #0196A7;
-                line-height: 0.9;
-                transition: all 0.3s ease;
+                @include outline-text;
             }
 
             .exd-title {
