@@ -1,9 +1,6 @@
 <template>
     <div>
         <Navs />
-        <Hero />
-
-
         <main class="main">
             <slot />
         </main>

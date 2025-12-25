@@ -75,6 +75,7 @@
                     </div>
                 </div>
             </aside>
+            
             <!-- EXPERIENCE DETAILS -->
             <section class="exd" :class="{ 'exd-visible': isExdVisible }">
                 <!-- BUTTON -->
