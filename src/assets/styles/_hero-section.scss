@@ -3,7 +3,7 @@
 @use 'animations' as *;
 @use 'sass:color';
 @use "mixins" as *;
-@use "breakpoints" as *;
+@use "mastors-fluider" as *;
 
 
 .hero-section-container {
@@ -89,7 +89,7 @@
                     animation: ellipseImgAnimation 5s none infinite;
                     transition: all 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
-                    @include breakpoint(desktop) {
+                    @include break-down(desktop) {
                         animation: ellipseAnimationMedia 5s none infinite;
                     }
                 }
@@ -108,7 +108,7 @@
                 }
             }
 
-            @include breakpoint(laptop) {
+            @include break-down(laptop) {
 
                 &.shape-1,
                 &.shape-2,
@@ -194,7 +194,7 @@
                     animation: slideInLeft 1s ease;
                 }
 
-                @include breakpoint(desktop) {
+                @include break-down(desktop) {
                     font-size: 3.5rem;
                 }
             }
@@ -213,23 +213,23 @@
                 margin-top: 10px;
                 animation: slideInRight 1s ease;
 
-                @include breakpoint(laptop) {
+                @include break-down(laptop) {
                     width: 40%;
                     font-size: 1rem;
                 }
 
-                @include breakpoint(tablet) {
+                @include break-down(tablet) {
                     width: 100%;
                     font-size: 1rem;
                 }
             }
 
-            @include breakpoint(desktop) {
+            @include break-down(desktop) {
                 width: 40%;
                 margin-left: 3%;
             }
 
-            @include breakpoint(tablet) {
+            @include break-down(tablet) {
                 width: 90%;
                 margin: 0 auto;
             }
@@ -257,7 +257,7 @@
             0 4px 30px rgba(0, 0, 0, 0.15),
             inset 0 1px 1px rgba(255, 255, 255, 0.3);
 
-        @include breakpoint(mobile) {
+        @include break-down(mobile) {
             flex-direction: column;
             top: 90vh;
             width: 100%;
@@ -280,7 +280,7 @@
             opacity: 1;
             bottom: -10%;
 
-            @include breakpoint(desktop) {
+            @include break-down(desktop) {
                 bottom: -22%;
             }
 
@@ -313,7 +313,7 @@
                 transition: all 0.3s ease;
                 padding: 1rem;
 
-                @include breakpoint(wide-screen) {
+                @include break-down(wide-screen) {
                     padding: 1rem;
                 }
             }
@@ -345,7 +345,7 @@
     display: block;
     height: 10rem;
 
-    @include breakpoint(mobile) {
+    @include break-down(mobile) {
         height: 90vh;
     }
 }
@@ -384,7 +384,7 @@
 
 
 
-@include breakpoint(desktop) {
+@include break-down(desktop) {
     .swiper-slide {
         h1 {
             font-size: 1rem;
