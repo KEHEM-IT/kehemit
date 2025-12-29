@@ -6,6 +6,7 @@
 @use './buttons' as *;
 @use './core-services' as *;
 @use './footer' as *;
+@use './mixins' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -41,4 +42,25 @@ a {
 
 li {
     list-style: none;
+}
+
+// HEADING BLOCK
+.heading-block {
+    position: relative;
+    text-align: center;
+
+    .heading-back {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -1rem;
+        text-wrap: nowrap;
+        @include outline-text(rgba($black, 0.1), 7rem);
+        text-transform: capitalize;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-transform: capitalize !important;
+    }
 }
